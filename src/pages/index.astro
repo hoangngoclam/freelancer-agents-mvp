@@ -2,16 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.tsx';
-import FeaturedServices from '../components/FeaturedServices.tsx';
 import HowItWorks from '../components/HowItWorks.tsx';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="AgentStore - The Shopify for AI Services">
+<Layout title="AI Solutions - Giải pháp tự động hóa cho doanh nghiệp">
   <Header />
   <main>
     <Hero client:load />
-    <FeaturedServices client:load />
     <HowItWorks client:load />
   </main>
   <Footer />
