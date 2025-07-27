@@ -2,14 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.tsx';
+import AutomationGrid from '../components/AutomationGrid.tsx';
 import HowItWorks from '../components/HowItWorks.tsx';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="AI Solutions - Giải pháp tự động hóa cho doanh nghiệp">
+<Layout title="VANTA - Giải pháp tự động hóa cho doanh nghiệp Việt Nam">
   <Header />
   <main>
     <Hero client:load />
+    <AutomationGrid client:load />
     <HowItWorks client:load />
   </main>
   <Footer />
