@@ -1,0 +1,261 @@
+---
+export async function getStaticPaths() {
+  const automationDemos = [
+    {
+      slug: 'tu-dong-inbox-khach-sau-khi-dien-form',
+      id: '1',
+      title: 'Tự động inbox khách sau khi điền form',
+      tagline: 'Ngừng phản hồi thủ công. Tự động gửi email chào mừng và thông tin chi tiết ngay lập tức.',
+      category: 'Email Marketing',
+      description: 'Tự động gửi email chào mừng và thông tin chi tiết khi khách hàng điền form liên hệ',
+      benefits: 'Giảm 80% thời gian phản hồi thủ công',
+      problems: [
+        'Mất hàng giờ để phản hồi từng email thủ công',
+        'Khách hàng phải chờ đợi lâu để nhận thông tin',
+        'Dễ bỏ sót hoặc trả lời chậm trễ',
+        'Không thể phản hồi ngoài giờ làm việc'
+      ],
+      solutions: [
+        'Phản hồi tự động trong vòng 30 giây',
+        'Hoạt động 24/7, không bao giờ nghỉ',
+        'Thông tin nhất quán và chuyên nghiệp',
+        'Tăng tỷ lệ chuyển đổi khách hàng tiềm năng'
+      ],
+      techStack: ['Gmail API', 'Zapier', 'Google Forms', 'Mailchimp'],
+      basePrice: 2500000,
+      deliveryTime: '3-5 ngày'
+    },
+    {
+      slug: 'voice-chatbot-tu-van-dich-vu-co-ban',
+      id: '2',
+      title: 'Voice chatbot tư vấn dịch vụ cơ bản',
+      tagline: 'Khách gọi vào là có AI tư vấn liền. Không cần nhân viên trực 24/7.',
+      category: 'Customer Service',
+      description: 'Chatbot AI có thể trả lời các câu hỏi thường gặp và tư vấn dịch vụ 24/7',
+      benefits: 'Khách gọi vào là có AI tư vấn liền',
+      problems: [
+        'Không thể trả lời điện thoại ngoài giờ làm việc',
+        'Nhân viên bận không thể tiếp khách hàng',
+        'Chi phí nhân sự cao cho tư vấn cơ bản',
+        'Thông tin tư vấn không nhất quán'
+      ],
+      solutions: [
+        'Tư vấn tự động 24/7 không nghỉ',
+        'Trả lời chính xác các câu hỏi thường gặp',
+        'Tiết kiệm 70% chi phí nhân sự',
+        'Chuyển tiếp khách hàng quan trọng cho nhân viên'
+      ],
+      techStack: ['OpenAI GPT', 'Twilio Voice', 'Google Speech-to-Text', 'Firebase'],
+      basePrice: 5000000,
+      deliveryTime: '7-10 ngày'
+    },
+    {
+      slug: 'tu-dong-tao-bao-cao-ban-hang',
+      id: '3',
+      title: 'Tự động tạo báo cáo bán hàng',
+      tagline: 'Ngừng làm báo cáo thủ công. Nhận báo cáo chi tiết tự động hàng tuần.',
+      category: 'Analytics',
+      description: 'Tự động thu thập dữ liệu và tạo báo cáo bán hàng hàng tuần/tháng',
+      benefits: 'Tiết kiệm 10 giờ/tuần làm báo cáo',
+      problems: [
+        'Mất hàng giờ để tổng hợp dữ liệu từ nhiều nguồn',
+        'Dễ sai sót khi nhập liệu thủ công',
+        'Báo cáo không kịp thời để ra quyết định',
+        'Khó theo dõi xu hướng và hiệu suất'
+      ],
+      solutions: [
+        'Tự động thu thập dữ liệu từ mọi kênh bán hàng',
+        'Báo cáo chính xác 99.9% không sai sót',
+        'Nhận báo cáo hàng ngày/tuần/tháng tự động',
+        'Biểu đồ trực quan dễ hiểu và phân tích'
+      ],
+      techStack: ['Google Sheets API', 'Power BI', 'Shopify API', 'Python'],
+      basePrice: 3500000,
+      deliveryTime: '5-7 ngày'
+    }
+  ];
+
+  return automationDemos.map(demo => ({
+    params: { slug: demo.slug },
+    props: { demo }
+  }));
+}
+
+const { demo } = Astro.props;
+
+import Layout from '../../layouts/Layout.astro';
+import ProductDemo from '../../components/ProductDemo.tsx';
+import ConfigurationEngine from '../../components/ConfigurationEngine.tsx';
+---
+
+<Layout title={`${demo.title} - VANTA`} description={demo.tagline}>
+  <div class="min-h-screen bg-gray-50">
+    <!-- Back Navigation -->
+    <div class="bg-white border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <a href="/" class="inline-flex items-center text-purple-600 hover:text-purple-700 transition-colors">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Quay lại trang chủ
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 1: The "Aha!" Moment -->
+    <section class="bg-gradient-to-br from-purple-50 to-indigo-100 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <div class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+            {demo.category}
+          </div>
+          <h1 class="text-4xl font-bold text-gray-900 mb-4">
+            {demo.title}
+          </h1>
+          <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+            {demo.tagline}
+          </p>
+        </div>
+
+        <!-- Interactive Demo -->
+        <ProductDemo demo={demo} client:load />
+      </div>
+    </section>
+
+    <!-- Section 2: The Business Case -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- The Problem -->
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">
+              Bạn đang gặp những vấn đề này?
+            </h2>
+            <div class="space-y-4">
+              {demo.problems.map((problem: string) => (
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-1">
+                    <span class="text-red-600 text-sm">✗</span>
+                  </div>
+                  <p class="ml-3 text-gray-700">{problem}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- The Solution -->
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">
+              AI của chúng tôi giải quyết như thế này
+            </h2>
+            <div class="space-y-4">
+              {demo.solutions.map((solution: string) => (
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-1">
+                    <span class="text-green-600 text-sm">✓</span>
+                  </div>
+                  <p class="ml-3 text-gray-700">{solution}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Configuration Engine -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Tùy chỉnh giải pháp & xem giá của bạn
+          </h2>
+          <p class="text-lg text-gray-600">
+            Trả lời vài câu hỏi đơn giản để nhận báo giá chính xác
+          </p>
+        </div>
+
+        <ConfigurationEngine demo={demo} client:load />
+      </div>
+    </section>
+
+    <!-- Section 4: Building Trust & Confidence -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- What's Included -->
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">
+              Những gì bạn sẽ nhận được
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                  <span class="text-green-600 text-sm">✓</span>
+                </div>
+                <span class="ml-3 text-gray-700">Thiết lập và cấu hình AI hoàn chỉnh</span>
+              </div>
+              <div class="flex items-center">
+                <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                  <span class="text-green-600 text-sm">✓</span>
+                </div>
+                <span class="ml-3 text-gray-700">Hỗ trợ tích hợp với hệ thống hiện tại</span>
+              </div>
+              <div class="flex items-center">
+                <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                  <span class="text-green-600 text-sm">✓</span>
+                </div>
+                <span class="ml-3 text-gray-700">Đào tạo sử dụng cho team</span>
+              </div>
+              <div class="flex items-center">
+                <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                  <span class="text-green-600 text-sm">✓</span>
+                </div>
+                <span class="ml-3 text-gray-700">Bảo hành hiệu suất 30 ngày</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technology & Seller Info -->
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">
+              Công nghệ sử dụng
+            </h3>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              {demo.techStack.map((tech: string) => (
+                <div class="bg-gray-100 rounded-lg p-3 text-center">
+                  <span class="text-sm font-medium text-gray-700">{tech}</span>
+                </div>
+              ))}
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-6">
+              <h4 class="font-semibold text-gray-900 mb-2">Về nhà phát triển</h4>
+              <div class="flex items-center">
+                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                  <span class="text-white font-bold">V</span>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900">VANTA Team</p>
+                  <p class="text-sm text-gray-600">Chuyên gia tự động hóa AI cho doanh nghiệp Việt Nam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secondary CTA -->
+    <section class="py-8 bg-gray-100 border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gray-600 mb-4">
+          Có dự án phức tạp hoặc câu hỏi cụ thể?
+        </p>
+        <a href="/contact" class="text-purple-600 hover:text-purple-700 font-medium">
+          Đặt lịch tư vấn 15 phút miễn phí →
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>
