@@ -1,0 +1,46 @@
+import{j as t}from"./jsx-runtime.D_zvdyIk.js";import{r as h}from"./index.BVOCwoKb.js";import{c as n}from"./createLucideIcon.tO8mbuOy.js";import{C as g}from"./calendar.BCMdd9sZ.js";/**
+ * @license lucide-react v0.525.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const m=[["path",{d:"M12 8V4H8",key:"hb8ula"}],["rect",{width:"16",height:"12",x:"4",y:"8",rx:"2",key:"enze0r"}],["path",{d:"M2 14h2",key:"vft8re"}],["path",{d:"M20 14h2",key:"4cs60a"}],["path",{d:"M15 13v2",key:"1xurst"}],["path",{d:"M9 13v2",key:"rq6x2g"}]],p=n("bot",m);/**
+ * @license lucide-react v0.525.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const u=[["path",{d:"M3 3v16a2 2 0 0 0 2 2h16",key:"c24i48"}],["path",{d:"M18 17V9",key:"2bz60n"}],["path",{d:"M13 17V5",key:"1frdt8"}],["path",{d:"M8 17v-3",key:"17ska0"}]],x=n("chart-column",u);/**
+ * @license lucide-react v0.525.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const y=[["path",{d:"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z",key:"1rqfz7"}],["path",{d:"M14 2v4a2 2 0 0 0 2 2h4",key:"tnqrlb"}],["path",{d:"M10 9H8",key:"b1mrlr"}],["path",{d:"M16 13H8",key:"t4e002"}],["path",{d:"M16 17H8",key:"z1uh3a"}]],b=n("file-text",y);/**
+ * @license lucide-react v0.525.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const k=[["path",{d:"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7",key:"132q7q"}],["rect",{x:"2",y:"4",width:"20",height:"16",rx:"2",key:"izxlao"}]],v=n("mail",k);/**
+ * @license lucide-react v0.525.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const f=[["path",{d:"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z",key:"1lielz"}]],j=n("message-square",f);/**
+ * @license lucide-react v0.525.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const N=[["path",{d:"m21 21-4.34-4.34",key:"14j7rj"}],["circle",{cx:"11",cy:"11",r:"8",key:"4ej97u"}]],o=n("search",N);/**
+ * @license lucide-react v0.525.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const w=[["circle",{cx:"8",cy:"21",r:"1",key:"jimo8o"}],["circle",{cx:"19",cy:"21",r:"1",key:"13723u"}],["path",{d:"M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12",key:"9zh506"}]],M=n("shopping-cart",w);/**
+ * @license lucide-react v0.525.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const T=[["path",{d:"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",key:"1yyitq"}],["path",{d:"M16 3.128a4 4 0 0 1 0 7.744",key:"16gr8j"}],["path",{d:"M22 21v-2a4 4 0 0 0-3-3.87",key:"kshegd"}],["circle",{cx:"9",cy:"7",r:"4",key:"nufk8"}]],C=n("users",T);/**
+ * @license lucide-react v0.525.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const _=[["path",{d:"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z",key:"1xq2db"}]],S=n("zap",_),q=[{id:"1",title:"Tự động inbox khách sau khi điền form",description:"Tự động gửi email chào mừng và thông tin chi tiết khi khách hàng điền form liên hệ",category:"Email Marketing",icon:t.jsx(v,{className:"w-6 h-6"}),benefits:"Giảm 80% thời gian phản hồi thủ công"},{id:"2",title:"Voice chatbot tư vấn dịch vụ cơ bản",description:"Chatbot AI có thể trả lời các câu hỏi thường gặp và tư vấn dịch vụ 24/7",category:"Customer Service",icon:t.jsx(j,{className:"w-6 h-6"}),benefits:"Khách gọi vào là có AI tư vấn liền"},{id:"3",title:"Tự động tạo báo cáo bán hàng",description:"Tự động thu thập dữ liệu và tạo báo cáo bán hàng hàng tuần/tháng",category:"Analytics",icon:t.jsx(x,{className:"w-6 h-6"}),benefits:"Tiết kiệm 10 giờ/tuần làm báo cáo"},{id:"4",title:"Quản lý lịch hẹn tự động",description:"Tự động đặt lịch, nhắc nhở và xác nhận cuộc hẹn với khách hàng",category:"Scheduling",icon:t.jsx(g,{className:"w-6 h-6"}),benefits:"Giảm 90% lịch hẹn bị trùng"},{id:"5",title:"Xử lý đơn hàng tự động",description:"Tự động xử lý đơn hàng từ website, cập nhật kho và gửi thông báo",category:"E-commerce",icon:t.jsx(M,{className:"w-6 h-6"}),benefits:"Xử lý đơn hàng nhanh hơn 5 lần"},{id:"6",title:"Phân loại khách hàng tiềm năng",description:"AI phân tích và xếp hạng khách hàng tiềm năng dựa trên hành vi",category:"Sales",icon:t.jsx(C,{className:"w-6 h-6"}),benefits:"Tăng 40% tỷ lệ chuyển đổi"},{id:"7",title:"Tự động tạo nội dung marketing",description:"AI tạo nội dung social media, email marketing và blog posts",category:"Content",icon:t.jsx(b,{className:"w-6 h-6"}),benefits:"Tạo nội dung nhanh hơn 10 lần"},{id:"8",title:"Chatbot hỗ trợ kỹ thuật",description:"Bot tự động giải quyết các vấn đề kỹ thuật cơ bản của khách hàng",category:"Support",icon:t.jsx(p,{className:"w-6 h-6"}),benefits:"Giải quyết 70% ticket tự động"},{id:"9",title:"Tự động theo dõi đối thủ",description:"Theo dõi giá cả, sản phẩm và chiến lược marketing của đối thủ",category:"Intelligence",icon:t.jsx(S,{className:"w-6 h-6"}),benefits:"Cập nhật thị trường 24/7"}],z=["Tất cả","Email Marketing","Customer Service","Analytics","Scheduling","E-commerce","Sales","Content","Support","Intelligence"];function V(){const[a,s]=h.useState(""),[i,r]=h.useState("Tất cả"),c=q.filter(e=>{const l=e.title.toLowerCase().includes(a.toLowerCase())||e.description.toLowerCase().includes(a.toLowerCase()),d=i==="Tất cả"||e.category===i;return l&&d});return t.jsx("section",{className:"py-16 bg-white",children:t.jsxs("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:[t.jsxs("div",{className:"mb-12",children:[t.jsxs("div",{className:"relative mb-6",children:[t.jsx(o,{className:"absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"}),t.jsx("input",{type:"text",placeholder:"Tìm kiếm giải pháp tự động hóa...",className:"w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent",value:a,onChange:e=>s(e.target.value)})]}),t.jsx("div",{className:"flex flex-wrap gap-2",children:z.map(e=>t.jsx("button",{onClick:()=>r(e),className:`px-4 py-2 rounded-full text-sm font-medium transition-colors ${i===e?"bg-purple-600 text-white":"bg-gray-100 text-gray-700 hover:bg-gray-200"}`,children:e},e))})]}),t.jsx("div",{className:"mb-6",children:t.jsxs("p",{className:"text-gray-600",children:["Tìm thấy ",t.jsx("span",{className:"font-semibold",children:c.length})," giải pháp tự động hóa"]})}),t.jsx("div",{className:"grid md:grid-cols-2 lg:grid-cols-3 gap-6",children:c.map(e=>t.jsxs("div",{className:"bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow",children:[t.jsxs("div",{className:"flex items-center mb-4",children:[t.jsx("div",{className:"w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mr-4",children:e.icon}),t.jsx("div",{children:t.jsx("span",{className:"text-xs font-medium text-purple-600 bg-purple-50 px-2 py-1 rounded",children:e.category})})]}),t.jsx("h3",{className:"text-lg font-semibold text-gray-900 mb-2",children:e.title}),t.jsx("p",{className:"text-gray-600 mb-4 text-sm",children:e.description}),t.jsx("div",{className:"mb-4",children:t.jsxs("p",{className:"text-sm font-medium text-green-600",children:["✓ ",e.benefits]})}),t.jsx("button",{className:"w-full bg-gray-100 hover:bg-purple-50 text-gray-700 hover:text-purple-600 font-medium py-2 px-4 rounded-lg transition-colors border border-gray-200 hover:border-purple-200",children:t.jsx("a",{href:`/demo/${$(e.title)}`,className:"block",children:"Xem demo"})})]},e.id))}),c.length===0&&t.jsxs("div",{className:"text-center py-12",children:[t.jsx("div",{className:"w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4",children:t.jsx(o,{className:"w-8 h-8 text-gray-400"})}),t.jsx("h3",{className:"text-lg font-medium text-gray-900 mb-2",children:"Không tìm thấy kết quả"}),t.jsx("p",{className:"text-gray-600",children:"Thử tìm kiếm với từ khóa khác hoặc chọn danh mục khác"})]})]})})}function $(a){return{"Tự động inbox khách sau khi điền form":"tu-dong-inbox-khach-sau-khi-dien-form","Voice chatbot tư vấn dịch vụ cơ bản":"voice-chatbot-tu-van-dich-vu-co-ban","Tự động tạo báo cáo bán hàng":"tu-dong-tao-bao-cao-ban-hang","Quản lý lịch hẹn tự động":"quan-ly-lich-hen-tu-dong","Xử lý đơn hàng tự động":"xu-ly-don-hang-tu-dong","Phân loại khách hàng tiềm năng":"phan-loai-khach-hang-tiem-nang","Tự động tạo nội dung marketing":"tu-dong-tao-noi-dung-marketing","Chatbot hỗ trợ kỹ thuật":"chatbot-ho-tro-ky-thuat","Tự động theo dõi đối thủ":"tu-dong-theo-doi-doi-thu"}[a]||a.toLowerCase().replace(/\s+/g,"-")}export{V as default};
