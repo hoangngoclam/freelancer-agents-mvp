@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 
 interface Demo {
   id: string;
@@ -251,10 +251,17 @@ export default function ConfigurationEngine({ demo }: ConfigurationEngineProps) 
           </div>
 
           {/* Primary CTA */}
-          <button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center mb-4">
-            <Zap className="w-5 h-5 mr-2" />
-            Tạo báo giá chi tiết
-          </button>
+          <div className='w-full'>
+            <a
+            href="https://tally.so/r/woLO1V"
+            className="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors mb-4 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2"
+            target="_blank" rel="noopener noreferrer"
+            style={{ minHeight: 48 }}
+          >
+            <Calendar className="w-5 h-5" />
+            <span className="truncate">Đặt lịch tư vấn 15 phút miễn phí →</span>
+          </a>
+          </div>
 
           <p className="text-xs text-gray-500 text-center">
             Báo giá chính xác 100% • Không phí ẩn
