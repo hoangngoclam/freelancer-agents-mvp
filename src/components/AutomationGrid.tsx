@@ -14,8 +14,8 @@ interface AutomationDemo {
 const automationDemos: AutomationDemo[] = [
   {
     id: '1',
-    title: 'Tự động inbox khách sau khi điền form',
-    description: 'Tự động gửi email chào mừng và thông tin chi tiết khi khách hàng điền form liên hệ',
+    title: 'Tự động phản hồi khách hàng qua inbox',
+    description: 'Tự động gửi email chào mừng với thông tin chi tiết ngay khi khách hàng điền form "Liên hệ"',
     category: 'Email Marketing',
     icon: <Mail className="w-6 h-6" />,
     benefits: 'Giảm 80% thời gian phản hồi thủ công'
@@ -23,7 +23,7 @@ const automationDemos: AutomationDemo[] = [
   {
     id: '2',
     title: 'Voice chatbot tư vấn dịch vụ cơ bản',
-    description: 'Chatbot AI có thể trả lời các câu hỏi thường gặp và tư vấn dịch vụ 24/7',
+    description: 'Voicebot tự động lắng nghe và trả lời các câu hỏi cơ bản 24/7, tích hợp với hotline hiện tại',
     category: 'Customer Service',
     icon: <MessageSquare className="w-6 h-6" />,
     benefits: 'Khách gọi vào là có AI tư vấn liền'
@@ -31,7 +31,7 @@ const automationDemos: AutomationDemo[] = [
   {
     id: '3',
     title: 'Tự động tạo báo cáo bán hàng',
-    description: 'Tự động thu thập dữ liệu và tạo báo cáo bán hàng hàng tuần/tháng',
+    description: 'Bot tự động thu thập dữ liệu từ CRM hoặc Google Sheets và tạo báo cáo theo mẫu định sẵn',
     category: 'Analytics',
     icon: <BarChart3 className="w-6 h-6" />,
     benefits: 'Tiết kiệm 10 giờ/tuần làm báo cáo'
@@ -39,7 +39,7 @@ const automationDemos: AutomationDemo[] = [
   {
     id: '4',
     title: 'Quản lý lịch hẹn tự động',
-    description: 'Tự động đặt lịch, nhắc nhở và xác nhận cuộc hẹn với khách hàng',
+    description: 'Bot tự động lên lịch hẹn, gửi link chọn khung giờ, nhắc nhở trước cuộc họp và xác nhận lịch trình',
     category: 'Scheduling',
     icon: <Calendar className="w-6 h-6" />,
     benefits: 'Giảm 90% lịch hẹn bị trùng'
@@ -47,7 +47,7 @@ const automationDemos: AutomationDemo[] = [
   {
     id: '5',
     title: 'Xử lý đơn hàng tự động',
-    description: 'Tự động xử lý đơn hàng từ website, cập nhật kho và gửi thông báo',
+    description: 'Tự động xử lý: nhận đơn hàng → cập nhật tồn kho → gửi thông báo cho khách hàng và team vận hành',
     category: 'E-commerce',
     icon: <ShoppingCart className="w-6 h-6" />,
     benefits: 'Xử lý đơn hàng nhanh hơn 5 lần'
@@ -55,7 +55,7 @@ const automationDemos: AutomationDemo[] = [
   {
     id: '6',
     title: 'Phân loại khách hàng tiềm năng',
-    description: 'AI phân tích và xếp hạng khách hàng tiềm năng dựa trên hành vi',
+    description: 'Bot phân tích hành vi khách hàng (click, mở email, hoạt động web) để chấm điểm và xếp hạng leads',
     category: 'Sales',
     icon: <Users className="w-6 h-6" />,
     benefits: 'Tăng 40% tỷ lệ chuyển đổi'
@@ -63,7 +63,7 @@ const automationDemos: AutomationDemo[] = [
   {
     id: '7',
     title: 'Tự động tạo nội dung marketing',
-    description: 'AI tạo nội dung social media, email marketing và blog posts',
+    description: 'AI bot tạo nội dung dựa trên sản phẩm/dịch vụ của bạn, đưa ra gợi ý hoặc viết bản thảo hoàn chỉnh',
     category: 'Content',
     icon: <FileText className="w-6 h-6" />,
     benefits: 'Tạo nội dung nhanh hơn 10 lần'
@@ -71,7 +71,7 @@ const automationDemos: AutomationDemo[] = [
   {
     id: '8',
     title: 'Chatbot hỗ trợ kỹ thuật',
-    description: 'Bot tự động giải quyết các vấn đề kỹ thuật cơ bản của khách hàng',
+    description: 'Bot tự động trả lời câu hỏi thường gặp và cung cấp hướng dẫn từng bước kèm hình ảnh hoặc link',
     category: 'Support',
     icon: <Bot className="w-6 h-6" />,
     benefits: 'Giải quyết 70% ticket tự động'
@@ -79,7 +79,7 @@ const automationDemos: AutomationDemo[] = [
   {
     id: '9',
     title: 'Tự động theo dõi đối thủ',
-    description: 'Theo dõi giá cả, sản phẩm và chiến lược marketing của đối thủ',
+    description: 'Bot tự động quét website, social media và sản phẩm của đối thủ, gửi báo cáo hàng tuần về thay đổi',
     category: 'Intelligence',
     icon: <Zap className="w-6 h-6" />,
     benefits: 'Cập nhật thị trường 24/7'
@@ -169,9 +169,13 @@ export default function AutomationGrid() {
               </div>
               
               <button className="w-full bg-gray-100 hover:bg-purple-50 text-gray-700 hover:text-purple-600 font-medium py-2 px-4 rounded-lg transition-colors border border-gray-200 hover:border-purple-200">
-                <a href={`/demo/${getSlugFromTitle(demo.title)}`} className="block">
-                  Xem demo
-                </a>
+                {getSlugFromTitle(demo.title) ? (
+                  <a href={`/demo/${getSlugFromTitle(demo.title)}`} className="block">
+                    Xem demo
+                  </a>
+                ) : (
+                  <span className="text-gray-500">Sắp ra mắt</span>
+                )}
               </button>
             </div>
           ))}
@@ -198,15 +202,10 @@ export default function AutomationGrid() {
 
 function getSlugFromTitle(title: string): string {
   const slugMap: { [key: string]: string } = {
-    'Tự động inbox khách sau khi điền form': 'tu-dong-inbox-khach-sau-khi-dien-form',
+    'Tự động phản hồi khách hàng qua inbox': 'tu-dong-inbox-khach-sau-khi-dien-form',
     'Voice chatbot tư vấn dịch vụ cơ bản': 'voice-chatbot-tu-van-dich-vu-co-ban',
     'Tự động tạo báo cáo bán hàng': 'tu-dong-tao-bao-cao-ban-hang',
-    'Quản lý lịch hẹn tự động': 'quan-ly-lich-hen-tu-dong',
-    'Xử lý đơn hàng tự động': 'xu-ly-don-hang-tu-dong',
-    'Phân loại khách hàng tiềm năng': 'phan-loai-khach-hang-tiem-nang',
-    'Tự động tạo nội dung marketing': 'tu-dong-tao-noi-dung-marketing',
-    'Chatbot hỗ trợ kỹ thuật': 'chatbot-ho-tro-ky-thuat',
-    'Tự động theo dõi đối thủ': 'tu-dong-theo-doi-doi-thu'
+    // Only include demos that have detail pages
   };
   
   return slugMap[title] || title.toLowerCase().replace(/\s+/g, '-');
