@@ -435,6 +435,26 @@ export function getCurrentLanguage(url: URL): string {
   return 'vi';
 }
 
+export function getBrowserLanguage(): string {
+  if (typeof window === 'undefined') return 'vi';
+  
+  const stored = localStorage.getItem('preferred-language');
+  if (stored && ['vi', 'en'].includes(stored)) {
+    return stored;
+  }
+  
+  const browserLang = navigator.language.toLowerCase();
+  if (browserLang.startsWith('vi')) return 'vi';
+  if (browserLang.startsWith('en')) return 'en';
+  
+  return 'vi'; // Default fallback
+}
+
+export function setLanguagePreference(lang: string): void {
+  if (typeof window === 'undefined') return;
+  localStorage.setItem('preferred-language', lang);
+}
+
 export function getLocalizedPath(path: string, lang: string): string {
   if (lang === 'vi') {
     return path;
