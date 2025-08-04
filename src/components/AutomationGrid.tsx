@@ -169,13 +169,9 @@ export default function AutomationGrid() {
               </div>
               
               <button className="w-full bg-gray-100 hover:bg-purple-50 text-gray-700 hover:text-purple-600 font-medium py-2 px-4 rounded-lg transition-colors border border-gray-200 hover:border-purple-200">
-                {getSlugFromTitle(demo.title) ? (
-                  <a href={`/demo/${getSlugFromTitle(demo.title)}`} className="block">
-                    Xem demo
-                  </a>
-                ) : (
-                  <span className="text-gray-500">Sắp ra mắt</span>
-                )}
+                <a href={`/demo/${getSlugFromTitle(demo.title)}`} className="block">
+                  Xem demo
+                </a>
               </button>
             </div>
           ))}
@@ -202,11 +198,16 @@ export default function AutomationGrid() {
 
 function getSlugFromTitle(title: string): string {
   const slugMap: { [key: string]: string } = {
-    'Tự động phản hồi khách hàng qua inbox': 'tu-dong-inbox-khach-sau-khi-dien-form',
+    'Tự động inbox khách sau khi điền form': 'tu-dong-inbox-khach-sau-khi-dien-form',
     'Voice chatbot tư vấn dịch vụ cơ bản': 'voice-chatbot-tu-van-dich-vu-co-ban',
     'Tự động tạo báo cáo bán hàng': 'tu-dong-tao-bao-cao-ban-hang',
-    // Only include demos that have detail pages
+    'Quản lý lịch hẹn tự động': 'quan-ly-lich-hen-tu-dong',
+    'Xử lý đơn hàng tự động': 'xu-ly-don-hang-tu-dong',
+    'Phân loại khách hàng tiềm năng': 'phan-loai-khach-hang-tiem-nang',
+    'Tự động tạo nội dung marketing': 'tu-dong-tao-noi-dung-marketing',
+    'Chatbot hỗ trợ kỹ thuật': 'chatbot-ho-tro-ky-thuat',
+    'Tự động theo dõi đối thủ': 'tu-dong-theo-doi-doi-thu'
   };
   
-  return slugMap[title] || title.toLowerCase().replace(/\s+/g, '-');
+  return slugMap[title] || '';
 }

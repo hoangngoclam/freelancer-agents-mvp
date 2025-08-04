@@ -4,10 +4,10 @@ export async function getStaticPaths() {
     {
       slug: 'tu-dong-inbox-khach-sau-khi-dien-form',
       id: '1',
-      title: 'Tự động phản hồi khách hàng qua inbox',
-      tagline: 'Ngừng phản hồi thủ công. Tự động gửi email chào mừng với thông tin chi tiết ngay khi khách hàng điền form.',
+      title: 'Tự động inbox khách sau khi điền form',
+      tagline: 'Tự động gửi email chào mừng và tài liệu chi tiết ngay khi khách hàng điền form, loại bỏ việc phản hồi thủ công.',
       category: 'Email Marketing',
-      description: 'Tự động gửi email chào mừng với thông tin chi tiết ngay khi khách hàng điền form "Liên hệ"',
+      description: 'Tự động gửi email chào mừng và tài liệu chi tiết ngay khi khách hàng điền form, loại bỏ việc phản hồi thủ công',
       benefits: 'Giảm 80% thời gian phản hồi thủ công',
       problems: [
         'Mất hàng giờ để phản hồi từng email thủ công',
@@ -29,9 +29,9 @@ export async function getStaticPaths() {
       slug: 'voice-chatbot-tu-van-dich-vu-co-ban',
       id: '2',
       title: 'Voice chatbot tư vấn dịch vụ cơ bản',
-      tagline: 'Voicebot tự động lắng nghe và trả lời các câu hỏi cơ bản 24/7. Không cần thuê nhân viên trực tổng đài.',
+      tagline: 'AI tự động trả lời các câu hỏi cơ bản khi khách hàng gọi, không cần nhân viên trực 24/7.',
       category: 'Customer Service',
-      description: 'Voicebot tự động lắng nghe và trả lời các câu hỏi cơ bản 24/7, tích hợp với hotline hiện tại',
+      description: 'AI tự động trả lời các câu hỏi cơ bản khi khách hàng gọi, không cần nhân viên trực 24/7',
       benefits: 'Khách gọi vào là có AI tư vấn liền',
       problems: [
         'Không thể trả lời điện thoại ngoài giờ làm việc',
@@ -53,9 +53,9 @@ export async function getStaticPaths() {
       slug: 'tu-dong-tao-bao-cao-ban-hang',
       id: '3',
       title: 'Tự động tạo báo cáo bán hàng',
-      tagline: 'Bot tự động thu thập dữ liệu và tạo báo cáo theo mẫu định sẵn. Không còn copy-paste thủ công.',
+      tagline: 'Tự động thu thập, tổng hợp và gửi báo cáo bán hàng hàng tuần/tháng.',
       category: 'Analytics',
-      description: 'Bot tự động thu thập dữ liệu từ CRM hoặc Google Sheets và tạo báo cáo theo mẫu định sẵn',
+      description: 'Tự động thu thập, tổng hợp và gửi báo cáo bán hàng hàng tuần/tháng',
       benefits: 'Tiết kiệm 10 giờ/tuần làm báo cáo',
       problems: [
         'Mất hàng giờ để tổng hợp dữ liệu từ nhiều nguồn',
@@ -72,6 +72,150 @@ export async function getStaticPaths() {
       techStack: ['Google Sheets API', 'Power BI', 'Shopify API', 'Python'],
       basePrice: 3500000,
       deliveryTime: '5-7 ngày'
+    },
+    {
+      slug: 'quan-ly-lich-hen-tu-dong',
+      id: '4',
+      title: 'Quản lý lịch hẹn tự động',
+      tagline: 'Tự động đặt lịch, xác nhận và gửi nhắc nhở cuộc hẹn, không cần theo dõi thủ công.',
+      category: 'Scheduling',
+      description: 'Tự động đặt lịch, xác nhận và gửi nhắc nhở cuộc hẹn, không cần theo dõi thủ công',
+      benefits: 'Giảm 90% xung đột lịch hẹn',
+      problems: [
+        'Thường xuyên quên cuộc hẹn với khách hàng',
+        'Xung đột lịch trình do đặt trùng giờ',
+        'Mất thời gian nhắc nhở khách hàng thủ công',
+        'Khó quản lý nhiều cuộc hẹn cùng lúc'
+      ],
+      solutions: [
+        'Tự động đặt lịch và tránh xung đột',
+        'Gửi link chọn khung giờ trống cho khách',
+        'Nhắc nhở tự động trước cuộc hẹn',
+        'Xác nhận lịch trình qua SMS/Email'
+      ],
+      techStack: ['Google Calendar API', 'Calendly', 'Twilio SMS', 'Zapier'],
+      basePrice: 3000000,
+      deliveryTime: '4-6 ngày'
+    },
+    {
+      slug: 'xu-ly-don-hang-tu-dong',
+      id: '5',
+      title: 'Xử lý đơn hàng tự động',
+      tagline: 'Tự động xử lý đơn hàng từ website, gửi xác nhận và cập nhật tồn kho.',
+      category: 'E-commerce',
+      description: 'Tự động xử lý đơn hàng từ website, gửi xác nhận và cập nhật tồn kho',
+      benefits: 'Xử lý đơn hàng nhanh hơn 5 lần',
+      problems: [
+        'Phải cập nhật tồn kho thủ công sau mỗi đơn',
+        'Quên gửi email xác nhận cho khách hàng',
+        'Không thông báo kịp thời cho bộ phận vận chuyển',
+        'Dễ sai sót trong quá trình xử lý đơn hàng'
+      ],
+      solutions: [
+        'Tự động cập nhật tồn kho ngay khi có đơn',
+        'Gửi email xác nhận tức thì cho khách hàng',
+        'Thông báo tự động cho team vận hành',
+        'Quy trình chuẩn hóa, không sai sót'
+      ],
+      techStack: ['Shopify API', 'WooCommerce', 'Inventory Management', 'Email API'],
+      basePrice: 4000000,
+      deliveryTime: '6-8 ngày'
+    },
+    {
+      slug: 'phan-loai-khach-hang-tiem-nang',
+      id: '6',
+      title: 'Phân loại khách hàng tiềm năng',
+      tagline: 'AI chấm điểm leads dựa trên hành vi, giúp bạn tập trung vào khách hàng có khả năng chuyển đổi cao nhất.',
+      category: 'Sales',
+      description: 'AI chấm điểm leads dựa trên hành vi, giúp bạn tập trung vào khách hàng có khả năng chuyển đổi cao nhất',
+      benefits: 'Tăng 40% tỷ lệ chuyển đổi',
+      problems: [
+        'Có nhiều leads nhưng không biết ai thực sự quan tâm',
+        'Lãng phí thời gian theo đuổi leads kém chất lượng',
+        'Không biết ưu tiên liên hệ khách hàng nào trước',
+        'Khó đánh giá mức độ quan tâm của từng leads'
+      ],
+      solutions: [
+        'AI phân tích hành vi và chấm điểm tự động',
+        'Xếp hạng leads theo độ ưu tiên',
+        'Tập trung nguồn lực vào leads chất lượng cao',
+        'Theo dõi hành vi khách hàng real-time'
+      ],
+      techStack: ['Machine Learning', 'Google Analytics', 'CRM Integration', 'Behavioral Tracking'],
+      basePrice: 6000000,
+      deliveryTime: '8-10 ngày'
+    },
+    {
+      slug: 'tu-dong-tao-noi-dung-marketing',
+      id: '7',
+      title: 'Tự động tạo nội dung marketing',
+      tagline: 'AI tạo bài viết, nội dung social media, email và blog phù hợp với mục tiêu của bạn.',
+      category: 'Content',
+      description: 'AI tạo bài viết, nội dung social media, email và blog phù hợp với mục tiêu của bạn',
+      benefits: 'Tạo nội dung nhanh hơn 10 lần',
+      problems: [
+        'Hết ý tưởng cho nội dung social media hàng tuần',
+        'Mất nhiều thời gian viết blog và email marketing',
+        'Nội dung không nhất quán về tone và message',
+        'Khó duy trì lịch đăng bài đều đặn'
+      ],
+      solutions: [
+        'AI đề xuất ý tưởng nội dung không giới hạn',
+        'Tạo bản thảo hoàn chỉnh trong vài phút',
+        'Đảm bảo tone và message nhất quán',
+        'Lên lịch đăng bài tự động'
+      ],
+      techStack: ['OpenAI GPT-4', 'Content Calendar', 'Social Media APIs', 'SEO Tools'],
+      basePrice: 4500000,
+      deliveryTime: '5-7 ngày'
+    },
+    {
+      slug: 'chatbot-ho-tro-ky-thuat',
+      id: '8',
+      title: 'Chatbot hỗ trợ kỹ thuật',
+      tagline: 'Tự động giải quyết các vấn đề kỹ thuật thường gặp, giảm tải cho team support.',
+      category: 'Support',
+      description: 'Tự động giải quyết các vấn đề kỹ thuật thường gặp, giảm tải cho team support',
+      benefits: 'Giải quyết 70% ticket tự động',
+      problems: [
+        'Khách hàng hỏi những vấn đề kỹ thuật cơ bản lặp đi lặp lại',
+        'Team support bị quá tải với các câu hỏi đơn giản',
+        'Thời gian phản hồi chậm vào giờ cao điểm',
+        'Chi phí nhân sự support ngày càng tăng'
+      ],
+      solutions: [
+        'Chatbot trả lời tức thì 24/7',
+        'Hướng dẫn từng bước kèm hình ảnh',
+        'Chuyển tiếp case phức tạp cho nhân viên',
+        'Học hỏi từ các tương tác để cải thiện'
+      ],
+      techStack: ['Natural Language Processing', 'Knowledge Base', 'Live Chat Integration', 'Machine Learning'],
+      basePrice: 5500000,
+      deliveryTime: '7-9 ngày'
+    },
+    {
+      slug: 'tu-dong-theo-doi-doi-thu',
+      id: '9',
+      title: 'Tự động theo dõi đối thủ',
+      tagline: 'Tự động theo dõi giá cả, chiến lược và nội dung của đối thủ, luôn đi trước một bước.',
+      category: 'Intelligence',
+      description: 'Tự động theo dõi giá cả, chiến lược và nội dung của đối thủ, luôn đi trước một bước',
+      benefits: 'Cập nhật thị trường 24/7',
+      problems: [
+        'Không có thời gian theo dõi đối thủ thường xuyên',
+        'Bỏ lỡ các thay đổi quan trọng của competitor',
+        'Khó so sánh giá cả và dịch vụ một cách hệ thống',
+        'Phản ứng chậm với xu hướng thị trường'
+      ],
+      solutions: [
+        'Theo dõi tự động website và social media đối thủ',
+        'Cảnh báo ngay khi có thay đổi quan trọng',
+        'Báo cáo so sánh chi tiết hàng tuần',
+        'Phân tích xu hướng và đề xuất chiến lược'
+      ],
+      techStack: ['Web Scraping', 'Price Monitoring', 'Social Media APIs', 'Data Analytics'],
+      basePrice: 7000000,
+      deliveryTime: '10-12 ngày'
     }
   ];
 

@@ -177,27 +177,286 @@ export default function ProductDemo({ demo }: ProductDemoProps) {
             <p className="text-gray-600 mb-6">
               Xem cách {demo.title.toLowerCase()} hoạt động trong thực tế
             </p>
-            <button
-              onClick={handleDemo}
-              disabled={isPlaying}
-              className="bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center mx-auto"
-            >
-              {isPlaying ? (
-                <>
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  Đang demo...
-                </>
-              ) : (
-                <>
-                  <Play className="w-5 h-5 mr-2" />
-                  Bắt đầu demo
-                </>
-              )}
-            </button>
+            {renderDemoByCategory()}
           </div>
         );
     }
   };
+
+  const renderDemoByCategory = () => {
+    switch (demo.category) {
+      case 'Scheduling':
+        return renderSchedulingDemo();
+      case 'E-commerce':
+        return renderEcommerceDemo();
+      case 'Sales':
+        return renderSalesDemo();
+      case 'Content':
+        return renderContentDemo();
+      case 'Support':
+        return renderSupportDemo();
+      case 'Intelligence':
+        return renderIntelligenceDemo();
+      default:
+        return renderDefaultDemo();
+    }
+  };
+
+  const renderSchedulingDemo = () => (
+    <div className="space-y-6">
+      <div className="bg-blue-50 rounded-lg p-6 text-center">
+        <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-white text-2xl">📅</span>
+        </div>
+        <p className="text-gray-700 mb-4">
+          Mô phỏng: Khách hàng muốn đặt lịch hẹn
+        </p>
+        <div className="bg-white rounded p-4 text-left">
+          <p className="text-sm text-gray-600">
+            <strong>Khách hàng:</strong> "Tôi muốn đặt lịch tư vấn vào tuần tới"
+          </p>
+        </div>
+      </div>
+      
+      <button
+        onClick={handleDemo}
+        disabled={isPlaying}
+        className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
+      >
+        {isPlaying ? (
+          <>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+            AI đang xử lý lịch hẹn...
+          </>
+        ) : (
+          <>
+            <Play className="w-5 h-5 mr-2" />
+            Xem AI đặt lịch tự động
+          </>
+        )}
+      </button>
+    </div>
+  );
+
+  const renderEcommerceDemo = () => (
+    <div className="space-y-6">
+      <div className="bg-green-50 rounded-lg p-6 text-center">
+        <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-white text-2xl">🛒</span>
+        </div>
+        <p className="text-gray-700 mb-4">
+          Mô phỏng: Khách hàng vừa đặt hàng trên website
+        </p>
+        <div className="bg-white rounded p-4 text-left">
+          <p className="text-sm text-gray-600">
+            <strong>Đơn hàng #12345:</strong><br/>
+            Sản phẩm: Áo thun trắng (Size M)<br/>
+            Số lượng: 2<br/>
+            Tổng tiền: 500,000 VND
+          </p>
+        </div>
+      </div>
+      
+      <button
+        onClick={handleDemo}
+        disabled={isPlaying}
+        className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
+      >
+        {isPlaying ? (
+          <>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+            Đang xử lý đơn hàng...
+          </>
+        ) : (
+          <>
+            <Play className="w-5 h-5 mr-2" />
+            Xem AI xử lý đơn hàng
+          </>
+        )}
+      </button>
+    </div>
+  );
+
+  const renderSalesDemo = () => (
+    <div className="space-y-6">
+      <div className="bg-purple-50 rounded-lg p-6 text-center">
+        <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-white text-2xl">⭐</span>
+        </div>
+        <p className="text-gray-700 mb-4">
+          Mô phỏng: Hệ thống phân tích 3 leads mới
+        </p>
+        <div className="bg-white rounded p-4 text-left space-y-2">
+          <div className="flex justify-between">
+            <span className="text-sm">Nguyễn Văn A</span>
+            <span className="text-green-600 font-bold">95 điểm</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-sm">Trần Thị B</span>
+            <span className="text-yellow-600 font-bold">67 điểm</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-sm">Lê Văn C</span>
+            <span className="text-red-600 font-bold">23 điểm</span>
+          </div>
+        </div>
+      </div>
+      
+      <button
+        onClick={handleDemo}
+        disabled={isPlaying}
+        className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
+      >
+        {isPlaying ? (
+          <>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+            AI đang phân tích leads...
+          </>
+        ) : (
+          <>
+            <Play className="w-5 h-5 mr-2" />
+            Xem AI chấm điểm leads
+          </>
+        )}
+      </button>
+    </div>
+  );
+
+  const renderContentDemo = () => (
+    <div className="space-y-6">
+      <div className="bg-indigo-50 rounded-lg p-6 text-center">
+        <div className="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-white text-2xl">✍️</span>
+        </div>
+        <p className="text-gray-700 mb-4">
+          Mô phỏng: Yêu cầu tạo nội dung cho Facebook
+        </p>
+        <div className="bg-white rounded p-4 text-left">
+          <p className="text-sm text-gray-600">
+            <strong>Chủ đề:</strong> Giới thiệu sản phẩm mới<br/>
+            <strong>Tone:</strong> Thân thiện, chuyên nghiệp<br/>
+            <strong>Độ dài:</strong> 150-200 từ
+          </p>
+        </div>
+      </div>
+      
+      <button
+        onClick={handleDemo}
+        disabled={isPlaying}
+        className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
+      >
+        {isPlaying ? (
+          <>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+            AI đang tạo nội dung...
+          </>
+        ) : (
+          <>
+            <Play className="w-5 h-5 mr-2" />
+            Xem AI tạo nội dung
+          </>
+        )}
+      </button>
+    </div>
+  );
+
+  const renderSupportDemo = () => (
+    <div className="space-y-6">
+      <div className="bg-orange-50 rounded-lg p-6 text-center">
+        <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-white text-2xl">🤖</span>
+        </div>
+        <p className="text-gray-700 mb-4">
+          Mô phỏng: Khách hàng gặp vấn đề kỹ thuật
+        </p>
+        <div className="bg-white rounded p-4 text-left">
+          <p className="text-sm text-gray-600 italic">
+            "Tôi không thể đăng nhập vào tài khoản. Hệ thống báo lỗi mật khẩu sai nhưng tôi chắc chắn nhập đúng."
+          </p>
+        </div>
+      </div>
+      
+      <button
+        onClick={handleDemo}
+        disabled={isPlaying}
+        className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
+      >
+        {isPlaying ? (
+          <>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+            Chatbot đang phân tích vấn đề...
+          </>
+        ) : (
+          <>
+            <Play className="w-5 h-5 mr-2" />
+            Xem Chatbot hỗ trợ
+          </>
+        )}
+      </button>
+    </div>
+  );
+
+  const renderIntelligenceDemo = () => (
+    <div className="space-y-6">
+      <div className="bg-red-50 rounded-lg p-6 text-center">
+        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-white text-2xl">🔍</span>
+        </div>
+        <p className="text-gray-700 mb-4">
+          Mô phỏng: Theo dõi 3 đối thủ cạnh tranh
+        </p>
+        <div className="bg-white rounded p-4 text-left space-y-2">
+          <div className="text-sm">
+            <strong>Competitor A:</strong> Giảm giá 20% sản phẩm X
+          </div>
+          <div className="text-sm">
+            <strong>Competitor B:</strong> Ra mắt tính năng mới
+          </div>
+          <div className="text-sm">
+            <strong>Competitor C:</strong> Thay đổi chiến lược marketing
+          </div>
+        </div>
+      </div>
+      
+      <button
+        onClick={handleDemo}
+        disabled={isPlaying}
+        className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
+      >
+        {isPlaying ? (
+          <>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+            Đang quét thông tin đối thủ...
+          </>
+        ) : (
+          <>
+            <Play className="w-5 h-5 mr-2" />
+            Xem AI theo dõi đối thủ
+          </>
+        )}
+      </button>
+    </div>
+  );
+
+  const renderDefaultDemo = () => (
+    <button
+      onClick={handleDemo}
+      disabled={isPlaying}
+      className="bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center mx-auto"
+    >
+      {isPlaying ? (
+        <>
+          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+          Đang demo...
+        </>
+      ) : (
+        <>
+          <Play className="w-5 h-5 mr-2" />
+          Bắt đầu demo
+        </>
+      )}
+    </button>
+  );
 
   return (
     <div className="mb-12">
