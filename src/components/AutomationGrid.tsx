@@ -198,7 +198,7 @@ export default function AutomationGrid() {
 
 function getSlugFromTitle(title: string): string {
   const slugMap: { [key: string]: string } = {
-    'Tự động inbox khách sau khi điền form': 'tu-dong-inbox-khach-sau-khi-dien-form',
+    'Tự động phản hồi khách hàng qua inbox': 'tu-dong-phan-hoi-khach-hang-qua-inbox',
     'Voice chatbot tư vấn dịch vụ cơ bản': 'voice-chatbot-tu-van-dich-vu-co-ban',
     'Tự động tạo báo cáo bán hàng': 'tu-dong-tao-bao-cao-ban-hang',
     'Quản lý lịch hẹn tự động': 'quan-ly-lich-hen-tu-dong',
