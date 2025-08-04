@@ -125,7 +125,7 @@ export interface Translation {
 }
 
 export const translations: Record<string, Translation> = {
-  vn: {
+  vi: {
     nav: {
       automation: "Tự động hóa",
       pricing: "Bảng giá",
@@ -424,7 +424,7 @@ export const translations: Record<string, Translation> = {
 };
 
 export function getTranslation(lang: string = 'vn'): Translation {
-  return translations[lang] || translations.vn;
+  return translations[lang] || translations.vi;
 }
 
 export function getCurrentLanguage(url: URL): string {
@@ -432,11 +432,11 @@ export function getCurrentLanguage(url: URL): string {
   if (pathname.startsWith('/en/')) {
     return 'en';
   }
-  return 'vn';
+  return 'vi';
 }
 
 export function getLocalizedPath(path: string, lang: string): string {
-  if (lang === 'vn') {
+  if (lang === 'vi') {
     return path;
   }
   return `/en${path}`;

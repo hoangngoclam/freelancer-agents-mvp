@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import { Search, Bot, Mail, MessageSquare, FileText, Calendar, ShoppingCart, Users, BarChart3, Zap } from 'lucide-react';
+import { getTranslation } from '../lib/i18n';
+
+interface AutomationGridProps {
+  lang?: string;
+}
 
 interface AutomationDemo {
   id: string;
@@ -86,16 +91,28 @@ const automationDemos: AutomationDemo[] = [
   }
 ];
 
-const categories = ['Tất cả', 'Email Marketing', 'Customer Service', 'Analytics', 'Scheduling', 'E-commerce', 'Sales', 'Content', 'Support', 'Intelligence'];
-
-export default function AutomationGrid() {
+export default function AutomationGrid({ lang = 'vi' }: AutomationGridProps) {
+  const t = getTranslation(lang);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('Tất cả');
+  const [selectedCategory, setSelectedCategory] = useState(t.automationGrid.categories.all);
+
+  const categories = [
+    t.automationGrid.categories.all,
+    t.automationGrid.categories.emailMarketing,
+    t.automationGrid.categories.customerService,
+    t.automationGrid.categories.analytics,
+    t.automationGrid.categories.scheduling,
+    t.automationGrid.categories.ecommerce,
+    t.automationGrid.categories.sales,
+    t.automationGrid.categories.content,
+    t.automationGrid.categories.support,
+    t.automationGrid.categories.intelligence
+  ];
 
   const filteredDemos = automationDemos.filter(demo => {
     const matchesSearch = demo.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          demo.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'Tất cả' || demo.category === selectedCategory;
+    const matchesCategory = selectedCategory === t.automationGrid.categories.all || demo.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
@@ -108,7 +125,7 @@ export default function AutomationGrid() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
-              placeholder="Tìm kiếm giải pháp tự động hóa..."
+              placeholder={t.automationGrid.searchPlaceholder}
               className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -135,7 +152,7 @@ export default function AutomationGrid() {
         {/* Results Count */}
         <div className="mb-6">
           <p className="text-gray-600">
-            Tìm thấy <span className="font-semibold">{filteredDemos.length}</span> giải pháp tự động hóa
+            {t.automationGrid.resultsFound} <span className="font-semibold">{filteredDemos.length}</span> giải pháp tự động hóa
           </p>
         </div>
 
@@ -169,8 +186,8 @@ export default function AutomationGrid() {
               </div>
               
               <button className="w-full bg-gray-100 hover:bg-purple-50 text-gray-700 hover:text-purple-600 font-medium py-2 px-4 rounded-lg transition-colors border border-gray-200 hover:border-purple-200">
-                <a href={`/demo/${getSlugFromTitle(demo.title)}`} className="block">
-                  Xem demo
+                <a href={`${lang === 'en' ? '/en' : ''}/demo/${getSlugFromTitle(demo.title)}`} className="block">
+                  {t.automationGrid.viewDemo}
                 </a>
               </button>
             </div>
@@ -184,10 +201,10 @@ export default function AutomationGrid() {
               <Search className="w-8 h-8 text-gray-400" />
             </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">
-              Không tìm thấy kết quả
+              {t.automationGrid.noResults.title}
             </h3>
             <p className="text-gray-600">
-              Thử tìm kiếm với từ khóa khác hoặc chọn danh mục khác
+              {t.automationGrid.noResults.description}
             </p>
           </div>
         )}
